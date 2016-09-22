@@ -1,0 +1,21 @@
+{
+  "name": "crenshaw",
+  "description": "WordPress site for John Crenshaw",
+  "main": "",
+  "authors": [
+    "Brian Maier Jr. <brimaidesigns@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/brianmaierjr/crenshaw",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "susy": "^2.2.12",
+    "fontfaceobserver": "^2.0.1"
+  }
+}
