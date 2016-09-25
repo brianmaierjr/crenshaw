@@ -10,21 +10,21 @@
 
 							<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article">
 
+
+
 								<header class="article-header">
 
 									<h1 class="h2 entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
-									<p class="byline entry-meta vcard">
-                                        <?php printf( __( 'Posted', 'bonestheme' ).' %1$s %2$s',
-                                        /* the time the post was published */
-                                        '<time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
-                                        /* the author of the post */
-                                        ''
-                                        ); ?>
-									</p>
+									<p class="byline entry-meta vcard">Posted <?php the_date(); ?> in <?php the_category(', '); ?></p>
 
 								</header>
 
 								<section class="entry-content cf">
+										<?php
+											if ( has_post_thumbnail() ) {
+												the_post_thumbnail();
+											}
+										?>
 									<?php the_excerpt(); ?>
 								</section>
 

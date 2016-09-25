@@ -14,4 +14,10 @@ jQuery(document).ready(function($) {
       });
     });
 
+		// Form Trigger
+		$('.formTrigger').on('click', function(e) {
+			e.preventDefault();
+			$('#form').toggleClass('active');
+		});
+
 }); /* end of as page load scripts */

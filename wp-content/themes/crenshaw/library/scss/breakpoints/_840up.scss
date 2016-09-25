@@ -17,7 +17,8 @@ LAYOUT & GRID STYLES
 }
 
 #content {
-	margin: 4em 0;
+	margin: em(61) 0 0;
+	padding: 3em 0;
 }
 
 /*********************
@@ -25,6 +26,12 @@ HEADER STYLES
 *********************/
 
 .header {
+	background: white;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 99;
 
     #logo {
         float: left;
@@ -158,26 +165,32 @@ FOOTER STYLES
 
 		}
 	}
-	.copyright { float: right; }
+	.copyright {
+		float: right;
+		margin: 0;
+	}
 	.nav li { font-size: 1em; }
 }
 
 .bottom-cta {
 	padding: 4em 0;
+
+	.button {
+		padding: 1em 4em;
+	}
 }
 
 /*********************
 HOMEPAGE STYLES
 *********************/
 
-.home {
 	.intro {
 		overflow: hidden;
 		text-align: left;
 
 		.wrap {
 			position :relative;
-			padding: 5em 0;
+			padding: 7em 0;
 		}
 
 		img {
@@ -186,7 +199,11 @@ HOMEPAGE STYLES
 			left: -80px;
 			width: 54%;
 			display: block;
+		}
 
+		.button {
+			width: auto;
+			padding: 1em 4em;
 		}
 
 		p { font-size: 3em; }
@@ -199,14 +216,23 @@ HOMEPAGE STYLES
 	.highlights {
 		padding: 5em 0;
 
+		.sub-heading {
+			margin-bottom: 5em;
+		}
+
 		ul {
 			li {
 				flex: 1;
 				padding: 0 .5em;
+
+				&:hover {
+					svg {
+						transform: translateY(-1em);
+					}
+				}
 			}
 		}
 	}
-}
 
 
 /*********************
@@ -219,9 +245,59 @@ ABOUT PAGE STYLES
 			position: relative;
 
 			#main {
-				@include span(8);
-				@include push(2);
+				@include span(10);
+				@include push(1);
 			}
 		}
 
+}
+
+/*********************
+CONTACT PAGE STYLES
+*********************/
+
+.page-id-16 {
+	#inner-content {
+		#main {
+			@include span(5);
+			@include push(1);
+		}
+		.contact-form {
+			@include span(5);
+		}
+	}
+}
+
+.page-id-4,
+.page-id-16 {
+
+	#content { margin-top: em(61); }
+}
+
+
+/*********************
+SINGLE POST STYLES
+*********************/
+
+.single {
+	.header {
+		position: absolute;
+		top: -61px;
+	}
+
+	#container { position: relative; }
+
+	.intro {
+		.wrap {
+			position: relative;
+			padding: 0;
+			height: 100%;
+		}
+
+		.intro-text {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
 }

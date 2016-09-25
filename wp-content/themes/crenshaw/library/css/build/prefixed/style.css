@@ -696,16 +696,11 @@ textarea,
   line-height: 1em;
   margin-bottom: 14px;
   font-size: 1em;
-  color: #555;
-  border-color: #676767;
-  border-width: 2px;
-  border-style: solid;
-  border-spacing: inherit;
-  border-radius: 3px;
+  color: #333;
   vertical-align: middle;
   box-shadow: none;
   width: 100%;
-  background-color: gray;
+  background-color: white;
   transition: background-color 0.24s ease-in-out;
   padding: .5em;
   box-sizing: border-box;
@@ -717,7 +712,7 @@ textarea:focus,
 textarea:active,
 .field:focus,
 .field:active {
-  background-color: #8a8a8a;
+  background-color: whitesmoke;
   outline: none;
 }
 input[type].error, input[type].is-invalid,
@@ -784,10 +779,11 @@ input[type="password"] {
 textarea {
   max-width: 100%;
   min-height: 120px;
+  max-height: 150px;
   line-height: 1.5em;
 }
 
-.requestinfo input[type="submit"] {
+input[type="submit"] {
   display: inline-block;
   position: relative;
   font-family: Helvetica, Arial, sans-serif;
@@ -800,18 +796,19 @@ textarea {
   border: 0;
   cursor: pointer;
   transition: background-color 0.14s ease-in-out;
-  background: #b60000;
+  background: #6a0000;
   text-transform: uppercase;
   border-radius: 2em;
   width: 100%;
+  border-radius: 0;
 }
-.requestinfo input[type="submit"]:hover, .requestinfo input[type="submit"]:focus {
+input[type="submit"]:hover, input[type="submit"]:focus {
   color: white;
   text-decoration: none;
   outline: none;
-  background: #6a0000;
+  background: #1d0000;
 }
-.requestinfo input[type="submit"]:active {
+input[type="submit"]:active {
   top: 1px;
 }
 
@@ -840,6 +837,81 @@ legend,
 
 .elp_hidden {
   display: none;
+}
+
+div.wpcf7-validation-errors {
+  border: none;
+  background: #b60000;
+  color: white;
+  font-weight: 700;
+  padding: 1em;
+}
+
+span.wpcf7-not-valid-tip {
+  position: relative;
+  top: -10px;
+}
+
+#form {
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-transform: translateY(-100vh);
+          transform: translateY(-100vh);
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  opacity: 0;
+  transition: .2s all ease-in-out;
+  overflow-y: scroll;
+}
+#form h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+#form .form-container {
+  max-width: 500px;
+  background: #b60000;
+  padding: 2em;
+  margin: 0 auto 0;
+  text-align: left;
+  position: relative;
+  opacity: 0;
+  transition: .2s all ease-in-out;
+  transition-delay: .2s;
+  -webkit-transform: translateY(-3em);
+          transform: translateY(-3em);
+}
+#form .formTrigger {
+  position: absolute;
+  top: 0;
+  right: 0.2em;
+  font-size: 4em;
+  cursor: pointer;
+  line-height: .7em;
+}
+#form.active {
+  -webkit-transform: none;
+          transform: none;
+  opacity: 1;
+}
+#form.active .form-container {
+  opacity: 1;
+  -webkit-transform: none;
+          transform: none;
+}
+#form div.wpcf7-validation-errors {
+  border: 2px solid white;
+  background: transparent;
+}
+#form span.wpcf7-not-valid-tip {
+  position: relative;
+  top: -10px;
+  padding: .5em;
+  background: black;
+  color: white;
 }
 
 /******************************************************************
@@ -915,17 +987,21 @@ BASE (MOBILE) SIZE
 /*********************
 GENERAL STYLES
 *********************/
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
   font-family: 'Raleway', Helvetica, Arial, sans-serif;
   font-size: 100%;
-  line-height: 1.5;
-  color: #555;
+  line-height: 1.6;
+  color: #333;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.fonts-loaded body {
-  font-family: Helvetica, Arial, sans-serif;
 }
 
 /* Responsive Videos */
@@ -1009,7 +1085,7 @@ HEADER STYLES
 }
 .header nav li.current-menu-item a {
   font-weight: 700;
-  color: #555;
+  color: #333;
 }
 .header nav li a {
   display: inline;
@@ -1023,6 +1099,13 @@ HEADER STYLES
 }
 .header nav .button a {
   padding: 0.25em 0.5em;
+}
+.header nav .button:hover {
+  background: #b60000;
+}
+.header nav .button:hover a {
+  color: white;
+  text-decoration: none;
 }
 .header nav.visible {
   visibility: visible;
@@ -1121,6 +1204,7 @@ POSTS & CONTENT STYLES
   padding: 1.5em;
   margin: 0 0 1.5em;
   border-radius: 3px;
+  overflow: hidden;
 }
 
 /* end .entry-content */
@@ -1144,6 +1228,38 @@ POSTS & CONTENT STYLES
 /* end .wp-caption */
 .tags {
   margin: 0;
+}
+
+/*********************
+SINGLE POST STYLES
+*********************/
+.single .byline {
+  margin-top: .7em;
+}
+.single .intro {
+  height: 100vh;
+  max-height: 0;
+  transition: .5s max-height ease-in-out;
+}
+.single .intro .wrap {
+  position: relative;
+  height: 100%;
+}
+.single .intro .arrowDown {
+  position: absolute;
+  bottom: 1em;
+  left: 50%;
+  margin-left: -25px;
+  fill: #333;
+}
+
+/*********************
+ARCHIVE PAGE STYLES
+*********************/
+.archive .page-title {
+  margin-bottom: .75em;
+  border-bottom: 2px solid #cccccc;
+  padding-bottom: .5em;
 }
 
 /******************************************************************
@@ -1191,11 +1307,11 @@ PAGE NAVI STYLES
 }
 .pagination .current {
   cursor: default;
-  color: #555;
+  color: #333;
 }
 .pagination .current:hover, .pagination .current:focus {
   background-color: white;
-  color: #555;
+  color: #333;
 }
 
 /* end .bones_page_navi */
@@ -1235,8 +1351,9 @@ FOOTER STYLES
 *********************/
 .footer {
   clear: both;
-  background: #b60000;
+  background: #830000;
   color: white;
+  text-align: center;
 }
 .footer #inner-footer {
   padding: 2em 0;
@@ -1246,9 +1363,20 @@ FOOTER STYLES
 }
 .footer .nav li,
 .footer .nav a {
-  display: inline;
+  display: inline-block;
   padding: 0 .2em;
   font-size: .9em;
+}
+.footer .nav .button {
+  background: transparent;
+  border: 1px solid white;
+  margin-left: .5em;
+}
+.footer .nav .button:hover a {
+  text-decoration: none;
+}
+.footer .nav .button a {
+  padding: .25em 1em;
 }
 
 /*********************
@@ -1257,7 +1385,6 @@ BOTTOM CTA STYLES
 .bottom-cta {
   background: #b60000;
   color: white;
-  border-bottom: 1px solid white;
   text-align: center;
   padding: 3em 0;
 }
@@ -1272,8 +1399,9 @@ BOTTOM CTA STYLES
           transform: uppercase;
   font-weight: 700;
   margin-top: 2em;
-  padding: 1em 3em;
+  padding: 1em;
   text-transform: uppercase;
+  line-height: 1.4;
 }
 .bottom-cta .button:hover {
   background: white;
@@ -1289,67 +1417,74 @@ HOMEPAGE STYLES
 .home .header {
   display: none;
 }
-.home .intro {
+
+.intro {
   position: relative;
 }
-.home .intro .wrap {
+.intro .wrap {
   padding: 3em 0;
   position: relative;
 }
-.home .intro img {
+.intro img {
   display: none;
 }
-.home .intro:before {
+.intro:before {
   content: "";
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 85%, rgba(0, 0, 0, 0.35) 100%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 90%, rgba(0, 0, 0, 0.2) 100%);
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 100%;
 }
-.home .intro h1 {
+.intro h1 {
   color: #b60000;
   text-transform: uppercase;
   font-weight: 700;
   margin: 0;
 }
-.home .intro h2 {
+.intro h2 {
   font-size: 1em;
 }
-.home .intro p {
+.intro p {
   font-weight: 300;
   font-size: 2.5em;
   line-height: 1.2;
 }
-.home .intro p strong {
+.intro p strong {
   font-weight: 700;
 }
-.home .intro .button {
+.intro .button {
   font-size: 1.2em;
-  padding: 1em 4em;
+  padding: 1em;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+  line-height: 1.2;
 }
-.home .highlights {
+
+.highlights {
   padding: 3em 0;
 }
-.home .highlights h2 {
+.highlights h2 {
   margin: 0 0 .2em;
 }
-.home .highlights ul {
+.highlights ul {
   padding: 0;
   list-style: none;
 }
-.home .highlights ul li {
+.highlights ul li {
   margin-bottom: 2.5em;
 }
-.home .highlights ul li svg {
+.highlights ul li svg {
   width: 80px;
   height: 80px;
   margin: 0 auto 1.5em;
   display: block;
   fill: #b60000;
+  transition: .2s all ease-in-out;
 }
-.home .highlights .sub-heading {
+.highlights .sub-heading {
   color: #777;
   text-transform: uppercase;
   font-size: 1em;
@@ -1359,16 +1494,20 @@ HOMEPAGE STYLES
 /*********************
 ABOUT PAGE STYLES
 *********************/
-.page-id-4 .about-img {
+.page-id-4 .about-img,
+.page-id-16 .about-img {
   display: none;
 }
-.page-id-4 #inner-content {
+.page-id-4 #inner-content,
+.page-id-16 #inner-content {
   padding: 2em 0;
 }
-.page-id-4 #content {
+.page-id-4 #content,
+.page-id-16 #content {
   margin: 0;
 }
-.page-id-4 .page-title {
+
+.page-title.full {
   text-align: center;
   padding: 2em 0;
   background: #e6e6e6;
@@ -1377,21 +1516,38 @@ ABOUT PAGE STYLES
 /*********************
 BLOG STYLES
 *********************/
-.blog .entry-content {
+.entry-title {
+  font-weight: 700;
+}
+
+.blog .entry-content,
+.archive .entry-content {
   padding: .5em 0 0;
 }
-.blog .entry-content p {
+.blog .entry-content p,
+.archive .entry-content p {
   margin: 0;
 }
-.blog .post {
+.blog .post,
+.archive .post {
   padding: 2em 0;
   border-bottom: 1px solid #e6e6e6;
 }
-.blog .post:first-of-type {
+.blog .post:first-of-type,
+.archive .post:first-of-type {
   padding-top: 0;
 }
-.blog .post:last-of-type {
+.blog .post:last-of-type,
+.archive .post:last-of-type {
   border-bottom: none;
+}
+.blog .post .attachment-post-thumbnail,
+.archive .post .attachment-post-thumbnail {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto .5em;
+  width: 100%;
+  height: auto;
 }
 
 /*********************
@@ -1426,19 +1582,35 @@ MEDIA QUERIES
   }
 
   /* end .entry-content */
+  /*********************
+  BLOG PAGE STYLES
+  *********************/
+  .blog .post .attachment-post-thumbnail,
+  .archive .post .attachment-post-thumbnail {
+    width: 300px;
+    float: left;
+    margin-right: 1em;
+  }
+
+  /*********************
+  FORM STYLES
+  *********************/
+  #form .form-container {
+    margin: 2em auto 0;
+  }
 }
 @media only screen and (min-width: 680px) {
   /*********************
   HOMEPAGE STYLES
   *********************/
-  .home .highlights ul {
+  .highlights ul {
     display: -ms-flexbox;
     display: flex;
     width: 100%;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
-  .home .highlights ul li {
+  .highlights ul li {
     -ms-flex: 1 1 auto;
         flex: 1 1 auto;
     width: 50%;
@@ -1464,12 +1636,21 @@ MEDIA QUERIES
   }
 
   #content {
-    margin: 4em 0;
+    margin: 3.8125em 0 0;
+    padding: 3em 0;
   }
 
   /*********************
   HEADER STYLES
   *********************/
+  .header {
+    background: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+  }
   .header #logo {
     float: left;
   }
@@ -1581,6 +1762,7 @@ MEDIA QUERIES
   }
   .footer .copyright {
     float: right;
+    margin: 0;
   }
   .footer .nav li {
     font-size: 1em;
@@ -1589,40 +1771,55 @@ MEDIA QUERIES
   .bottom-cta {
     padding: 4em 0;
   }
+  .bottom-cta .button {
+    padding: 1em 4em;
+  }
 
   /*********************
   HOMEPAGE STYLES
   *********************/
-  .home .intro {
+  .intro {
     overflow: hidden;
     text-align: left;
   }
-  .home .intro .wrap {
+  .intro .wrap {
     position: relative;
-    padding: 5em 0;
+    padding: 7em 0;
   }
-  .home .intro img {
+  .intro img {
     position: absolute;
     bottom: 0;
     left: -80px;
     width: 54%;
     display: block;
   }
-  .home .intro p {
+  .intro .button {
+    width: auto;
+    padding: 1em 4em;
+  }
+  .intro p {
     font-size: 3em;
   }
-  .home .intro .intro-text {
+  .intro .intro-text {
     width: 56.73077%;
     float: right;
     margin-right: 0;
   }
-  .home .highlights {
+
+  .highlights {
     padding: 5em 0;
   }
-  .home .highlights ul li {
+  .highlights .sub-heading {
+    margin-bottom: 5em;
+  }
+  .highlights ul li {
     -ms-flex: 1;
         flex: 1;
     padding: 0 .5em;
+  }
+  .highlights ul li:hover svg {
+    -webkit-transform: translateY(-1em);
+            transform: translateY(-1em);
   }
 
   /*********************
@@ -1632,10 +1829,52 @@ MEDIA QUERIES
     position: relative;
   }
   .page-id-4 #inner-content #main {
-    width: 65.38462%;
+    width: 82.69231%;
     float: left;
     margin-right: 3.84615%;
-    margin-left: 17.30769%;
+    margin-left: 8.65385%;
+  }
+
+  /*********************
+  CONTACT PAGE STYLES
+  *********************/
+  .page-id-16 #inner-content #main {
+    width: 39.42308%;
+    float: left;
+    margin-right: 3.84615%;
+    margin-left: 8.65385%;
+  }
+  .page-id-16 #inner-content .contact-form {
+    width: 39.42308%;
+    float: left;
+    margin-right: 3.84615%;
+  }
+
+  .page-id-4 #content,
+  .page-id-16 #content {
+    margin-top: 3.8125em;
+  }
+
+  /*********************
+  SINGLE POST STYLES
+  *********************/
+  .single .header {
+    position: absolute;
+    top: -61px;
+  }
+  .single #container {
+    position: relative;
+  }
+  .single .intro .wrap {
+    position: relative;
+    padding: 0;
+    height: 100%;
+  }
+  .single .intro .intro-text {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
   }
 }
 @media only screen and (min-width: 970px) {
@@ -1647,13 +1886,16 @@ MEDIA QUERIES
   /*********************
   HOMEPAGE STYLES
   *********************/
-  .home .intro img {
+  .intro .wrap {
+    padding: 9em 0;
+  }
+  .intro img {
     width: 50%;
   }
-  .home .intro p {
+  .intro p {
     font-size: 3.5em;
   }
-  .home .intro .intro-text {
+  .intro .intro-text {
     width: 56.73077%;
     float: right;
     margin-right: 0;

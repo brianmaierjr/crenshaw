@@ -196,6 +196,23 @@ POSTS & CONTENT STYLES
 }
 
 /* end .entry-content */
+/*********************
+BLOG PAGE STYLES
+*********************/
+.blog .post .attachment-post-thumbnail,
+.archive .post .attachment-post-thumbnail {
+  width: 300px;
+  float: left;
+  margin-right: 1em;
+}
+
+/*********************
+FORM STYLES
+*********************/
+#form .form-container {
+  margin: 2em auto 0;
+}
+
 /******************************************************************
 Tablet & Small Desktop Stylesheet
 ******************************************************************/
@@ -214,12 +231,21 @@ LAYOUT & GRID STYLES
 }
 
 #content {
-  margin: 4em 0;
+  margin: 3.8125em 0 0;
+  padding: 3em 0;
 }
 
 /*********************
 HEADER STYLES
 *********************/
+.header {
+  background: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+}
 .header #logo {
   float: left;
 }
@@ -331,6 +357,7 @@ FOOTER STYLES
 }
 .footer .copyright {
   float: right;
+  margin: 0;
 }
 .footer .nav li {
   font-size: 1em;
@@ -339,39 +366,53 @@ FOOTER STYLES
 .bottom-cta {
   padding: 4em 0;
 }
+.bottom-cta .button {
+  padding: 1em 4em;
+}
 
 /*********************
 HOMEPAGE STYLES
 *********************/
-.home .intro {
+.intro {
   overflow: hidden;
   text-align: left;
 }
-.home .intro .wrap {
+.intro .wrap {
   position: relative;
-  padding: 5em 0;
+  padding: 7em 0;
 }
-.home .intro img {
+.intro img {
   position: absolute;
   bottom: 0;
   left: -80px;
   width: 54%;
   display: block;
 }
-.home .intro p {
+.intro .button {
+  width: auto;
+  padding: 1em 4em;
+}
+.intro p {
   font-size: 3em;
 }
-.home .intro .intro-text {
+.intro .intro-text {
   width: 56.73077%;
   float: right;
   margin-right: 0;
 }
-.home .highlights {
+
+.highlights {
   padding: 5em 0;
 }
-.home .highlights ul li {
+.highlights .sub-heading {
+  margin-bottom: 5em;
+}
+.highlights ul li {
   flex: 1;
   padding: 0 .5em;
+}
+.highlights ul li:hover svg {
+  transform: translateY(-1em);
 }
 
 /*********************
@@ -381,10 +422,51 @@ ABOUT PAGE STYLES
   position: relative;
 }
 .page-id-4 #inner-content #main {
-  width: 65.38462%;
+  width: 82.69231%;
   float: left;
   margin-right: 3.84615%;
-  margin-left: 17.30769%;
+  margin-left: 8.65385%;
+}
+
+/*********************
+CONTACT PAGE STYLES
+*********************/
+.page-id-16 #inner-content #main {
+  width: 39.42308%;
+  float: left;
+  margin-right: 3.84615%;
+  margin-left: 8.65385%;
+}
+.page-id-16 #inner-content .contact-form {
+  width: 39.42308%;
+  float: left;
+  margin-right: 3.84615%;
+}
+
+.page-id-4 #content,
+.page-id-16 #content {
+  margin-top: 3.8125em;
+}
+
+/*********************
+SINGLE POST STYLES
+*********************/
+.single .header {
+  position: absolute;
+  top: -61px;
+}
+.single #container {
+  position: relative;
+}
+.single .intro .wrap {
+  position: relative;
+  padding: 0;
+  height: 100%;
+}
+.single .intro .intro-text {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 /******************************************************************

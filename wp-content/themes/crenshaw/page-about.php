@@ -2,7 +2,7 @@
 
 			<div id="content">
 
-				<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
+				<h1 class="page-title full" itemprop="headline"><?php the_title(); ?></h1>
 
 				<div id="inner-content" class="wrap cf">
 

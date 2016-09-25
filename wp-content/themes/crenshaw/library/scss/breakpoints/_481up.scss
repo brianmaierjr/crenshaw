@@ -30,3 +30,28 @@ POSTS & CONTENT STYLES
 } /* end .entry-content */
 
 
+/*********************
+BLOG PAGE STYLES
+*********************/
+
+.blog,
+.archive {
+	.post {
+		.attachment-post-thumbnail {
+			width: 300px;
+			float: left;
+			margin-right: 1em;
+		}
+	}
+}
+
+/*********************
+FORM STYLES
+*********************/
+
+#form {
+	.form-container {
+		margin: 2em auto 0;
+	}
+}
+

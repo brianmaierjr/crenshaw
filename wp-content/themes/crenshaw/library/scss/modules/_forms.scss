@@ -16,15 +16,10 @@ textarea,
   margin-bottom: 14px;
   font-size: 1em;
   color: $text-color;
-  border-color: darken(gray, 10%);
-  border-width: 2px;
-  border-style: solid;
-  border-spacing: inherit;
-  border-radius: 3px;
   vertical-align: middle;
   box-shadow: none;
   width: 100%;
-  background-color: gray;
+  background-color: white;
   transition: background-color 0.24s ease-in-out;
   padding: .5em;
   box-sizing: border-box;
@@ -32,7 +27,7 @@ textarea,
   // a focused input (or hovered on)
   &:focus,
   &:active {
-    background-color: lighten(gray, 4%);
+    background-color: darken(white, 4%);
     outline: none;
   } // end hover or focus
 
@@ -85,13 +80,15 @@ input[type="password"] {
 textarea {
   max-width: 100%;
   min-height: 120px;
+	max-height: 150px;
   line-height: 1.5em;
 }
 
 // submit button
-.requestinfo input[type="submit"] { // class added to override styling above
-  @include button();
+input[type="submit"] { // class added to override styling above
+  @include button(darken($link-color, 15%));
   width: 100%;
+	border-radius: 0;
 }
 
 // selects
@@ -119,3 +116,83 @@ legend,
 }
 
 .elp_hidden { display: none; }
+
+// Validation Styling
+
+div.wpcf7-validation-errors {
+    border: none;
+    background: $link-color;
+    color: white;
+    font-weight: 700;
+    padding: 1em;
+}
+span.wpcf7-not-valid-tip {
+    position: relative;
+    top: -10px;
+}
+
+// Form Styling
+
+#form {
+	position: fixed;
+	top: 0;
+	left: 0;
+	transform: translateY(-100vh);
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.8);
+	color: white;
+	opacity: 0;
+	transition: .2s all ease-in-out;
+	overflow-y: scroll;
+
+	h2 {
+		text-align: center;
+		margin-top: 0;
+		margin-bottom: 1em;
+	}
+
+	.form-container {
+		max-width: 500px;
+		background: $link-color;
+		padding: 2em;
+		margin: 0 auto 0;
+		text-align: left;
+		position: relative;
+		opacity: 0;
+		transition: .2s all ease-in-out;
+		transition-delay: .2s;
+		transform: translateY(-3em);
+	}
+
+	.formTrigger {
+		position: absolute;
+    top: 0;
+    right: 0.2em;
+    font-size: 4em;
+    cursor: pointer;
+    line-height: .7em;
+	}
+
+	&.active {
+		transform: none;
+		opacity: 1;
+
+		.form-container {
+			opacity: 1;
+			transform: none;
+		}
+	}
+
+	div.wpcf7-validation-errors {
+			border: 2px solid white;
+			background: transparent;
+	}
+	span.wpcf7-not-valid-tip {
+			position: relative;
+			top: -10px;
+			padding: .5em;
+			background: black;
+			color: white;
+	}
+}

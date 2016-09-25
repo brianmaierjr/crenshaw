@@ -2,18 +2,9 @@
 HOMEPAGE STYLES
 *********************/
 
-.home {
 	.intro {
-
-		img {
-			width: 50%;
-		}
-
+		.wrap { padding: 9em 0; }
+		img {	width: 50%; }
 		p { font-size: 3.5em; }
-
-		.intro-text {
-			@include span(7 last);
-		}
+		.intro-text { @include span(7 last); }
 	}
-
-}
