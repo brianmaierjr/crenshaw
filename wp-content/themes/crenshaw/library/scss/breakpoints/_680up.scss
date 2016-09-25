@@ -1,0 +1,19 @@
+/*********************
+HOMEPAGE STYLES
+*********************/
+
+.home {
+	.highlights {
+		ul {
+			display: flex;
+			width: 100%;
+			flex-wrap: wrap;
+
+			li {
+				flex: 1 1 auto;
+				width: 50%;
+				float: left;
+			}
+		}
+	}
+}

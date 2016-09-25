@@ -13,10 +13,16 @@ $bp-lg: 1040px;
 ////
 /// @group colors
 ////
+/// Black
+$black:							#555;
+/// Red
+$red:								#b60000;
 
 /// Text Color
-$text-color:        #666;
+$text-color:        $black;
 /// Link Color
-$link-color:        green;
+$link-color:        $red;
 ///Link Hover
 $link-hover:        darken($link-color, 15%);
+
+

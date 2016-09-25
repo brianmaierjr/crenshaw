@@ -95,5 +95,4 @@ function bones_comments( $comment, $args, $depth ) {
 <?php
 } // don't remove this bracket!
 
-
 /* DON'T DELETE THIS CLOSING TAG */ ?>

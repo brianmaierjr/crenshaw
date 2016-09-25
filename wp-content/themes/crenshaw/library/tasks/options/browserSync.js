@@ -8,7 +8,8 @@ module.exports = {
             ],
         },
         options: {
-            watchTask: true
+            watchTask: true,
+						proxy: "crenshaw.loc"
         }
     }
 }

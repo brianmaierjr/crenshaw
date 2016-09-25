@@ -415,10 +415,13 @@ H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   text-rendering: optimizelegibility;
-  font-weight: 500;
+  font-weight: 400;
 }
 h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
   text-decoration: none;
+}
+h1.sub-heading, .h1.sub-heading, h2.sub-heading, .h2.sub-heading, h3.sub-heading, .h3.sub-heading, h4.sub-heading, .h4.sub-heading, h5.sub-heading, .h5.sub-heading {
+  margin-top: 0;
 }
 
 h1, .h1 {
@@ -474,7 +477,7 @@ h3, .h3 {
 }
 
 h4, .h4 {
-  color: green;
+  color: #b60000;
   font-size: 1.125em;
   line-height: 1.11111111;
 }
@@ -489,18 +492,18 @@ h5, .h5 {
   line-height: 1.25;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: green;
+  color: #b60000;
 }
 
 h6, .h6 {
-  color: green;
+  color: #b60000;
 }
 
 blockquote {
   font-size: 1em;
   line-height: 1.25;
   /* 25px / 20px */
-  border-left: 4px solid gray;
+  border-left: 4px solid #b60000;
   padding-left: 1em;
 }
 @media screen and (min-width: 768px) {
@@ -540,7 +543,7 @@ figure, figcaption {
 SUSY GRID // For any questions go to http://susydocs.oddbird.net/en/latest/
 ******************************************************************/
 .wrap {
-  max-width: 1440px;
+  max-width: 1240px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -551,33 +554,21 @@ SUSY GRID // For any questions go to http://susydocs.oddbird.net/en/latest/
 }
 
 .half {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 50%;
+  width: 48.07692%;
   float: left;
-  padding-left: 1.38889%;
-  padding-right: 1.38889%;
+  margin-right: 3.84615%;
 }
 
 .quarter {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 25%;
+  width: 22.11538%;
   float: left;
-  padding-left: 1.38889%;
-  padding-right: 1.38889%;
+  margin-right: 3.84615%;
 }
 
 .third {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 33.33333%;
+  width: 30.76923%;
   float: left;
-  padding-left: 1.38889%;
-  padding-right: 1.38889%;
+  margin-right: 3.84615%;
 }
 
 /*********************
@@ -594,19 +585,20 @@ Button Styles
   color: white !important;
   font-size: 1em;
   line-height: 34px;
-  font-weight: normal;
-  padding: .5em 1em;
-  border-radius: 4px;
+  font-weight: 700;
+  padding: .5em 1.5em;
   border: 0;
   cursor: pointer;
   transition: background-color 0.14s ease-in-out;
-  background: green;
+  background: #b60000;
+  text-transform: uppercase;
+  border-radius: 2em;
 }
 .button:hover, .button:focus {
   color: white;
   text-decoration: none;
   outline: none;
-  background: #003400;
+  background: #6a0000;
 }
 .button:active {
   top: 1px;
@@ -704,7 +696,7 @@ textarea,
   line-height: 1em;
   margin-bottom: 14px;
   font-size: 1em;
-  color: #666;
+  color: #555;
   border-color: #676767;
   border-width: 2px;
   border-style: solid;
@@ -803,20 +795,21 @@ textarea {
   color: white !important;
   font-size: 1em;
   line-height: 34px;
-  font-weight: normal;
-  padding: .5em 1em;
-  border-radius: 4px;
+  font-weight: 700;
+  padding: .5em 1.5em;
   border: 0;
   cursor: pointer;
   transition: background-color 0.14s ease-in-out;
-  background: green;
+  background: #b60000;
+  text-transform: uppercase;
+  border-radius: 2em;
   width: 100%;
 }
 .requestinfo input[type="submit"]:hover, .requestinfo input[type="submit"]:focus {
   color: white;
   text-decoration: none;
   outline: none;
-  background: #003400;
+  background: #6a0000;
 }
 .requestinfo input[type="submit"]:active {
   top: 1px;
@@ -900,7 +893,7 @@ progress {
   appearance: none;
   background-color: transparent;
   border: none;
-  color: green;
+  color: #b60000;
   z-index: 999;
 }
 
@@ -909,11 +902,11 @@ progress::-webkit-progress-bar {
 }
 
 progress::-webkit-progress-value {
-  background-color: green;
+  background-color: #b60000;
 }
 
 progress::-moz-progress-bar {
-  background-color: green;
+  background-color: #b60000;
 }
 
 /*********************
@@ -923,11 +916,10 @@ BASE (MOBILE) SIZE
 GENERAL STYLES
 *********************/
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Raleway', Helvetica, Arial, sans-serif;
   font-size: 100%;
   line-height: 1.5;
-  color: #666;
-  background-color: white;
+  color: #555;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -978,12 +970,12 @@ LAYOUT & GRID STYLES
 LINK STYLES
 *********************/
 a, a:visited {
-  color: green;
+  color: #b60000;
   /* on hover */
   /* mobile tap color */
 }
 a:hover, a:focus, a:visited:hover, a:visited:focus {
-  color: #003400;
+  color: #6a0000;
 }
 a:link, a:visited:link {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
@@ -994,11 +986,43 @@ HEADER STYLES
 *********************/
 #logo {
   margin: 0.75em 0;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
+.menu-trigger {
+  float: right;
+  margin-top: .5em;
+}
+
+.header {
+  text-align: center;
+  border-bottom: 1px solid #e6e6e6;
 }
 
 .header nav {
-  visibility: hidden;
-  height: 0;
+  clear: both;
+  text-align: center;
+}
+.header nav li {
+  display: inline;
+}
+.header nav li.current-menu-item a {
+  font-weight: 700;
+  color: #555;
+}
+.header nav li a {
+  display: inline;
+}
+.header nav .button {
+  background: transparent;
+  border: 2px solid #b60000;
+  margin-bottom: 1em;
+  display: inline-block;
+  margin-top: 1em;
+}
+.header nav .button a {
+  padding: 0.25em 0.5em;
 }
 .header nav.visible {
   visibility: visible;
@@ -1067,7 +1091,7 @@ POSTS & CONTENT STYLES
 .entry-content blockquote {
   margin: 0 0 1.5em 0.75em;
   padding: 0 0 0 0.75em;
-  border-left: 3px solid tomato;
+  border-left: 3px solid #b60000;
   font-style: italic;
   color: gray;
 }
@@ -1159,19 +1183,19 @@ PAGE NAVI STYLES
   padding: 0.75em;
   min-width: 1em;
   display: block;
-  color: green;
+  color: #b60000;
 }
 .pagination a:hover, .pagination a:focus, .pagination span:hover, .pagination span:focus {
-  background-color: green;
+  background-color: #b60000;
   color: white;
 }
 .pagination .current {
   cursor: default;
-  color: #666;
+  color: #555;
 }
 .pagination .current:hover, .pagination .current:focus {
   background-color: white;
-  color: #666;
+  color: #555;
 }
 
 /* end .bones_page_navi */
@@ -1196,11 +1220,177 @@ SIDEBARS & ASIDES
   margin-bottom: 1.5em;
 }
 
+.widget {
+  background: #e6e6e6;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+.widget .widgettitle {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
 /*********************
 FOOTER STYLES
 *********************/
 .footer {
   clear: both;
+  background: #b60000;
+  color: white;
+}
+.footer #inner-footer {
+  padding: 2em 0;
+}
+.footer a {
+  color: white;
+}
+.footer .nav li,
+.footer .nav a {
+  display: inline;
+  padding: 0 .2em;
+  font-size: .9em;
+}
+
+/*********************
+BOTTOM CTA STYLES
+*********************/
+.bottom-cta {
+  background: #b60000;
+  color: white;
+  border-bottom: 1px solid white;
+  text-align: center;
+  padding: 3em 0;
+}
+.bottom-cta h2 {
+  margin-top: 0;
+}
+.bottom-cta .button {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  transform: uppercase;
+  font-weight: 700;
+  margin-top: 2em;
+  padding: 1em 3em;
+  text-transform: uppercase;
+}
+.bottom-cta .button:hover {
+  background: white;
+  color: #b60000 !important;
+}
+
+/*********************
+HOMEPAGE STYLES
+*********************/
+.home {
+  text-align: center;
+}
+.home .header {
+  display: none;
+}
+.home .intro {
+  position: relative;
+}
+.home .intro .wrap {
+  padding: 3em 0;
+  position: relative;
+}
+.home .intro img {
+  display: none;
+}
+.home .intro:before {
+  content: "";
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 85%, rgba(0, 0, 0, 0.35) 100%);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.home .intro h1 {
+  color: #b60000;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0;
+}
+.home .intro h2 {
+  font-size: 1em;
+}
+.home .intro p {
+  font-weight: 300;
+  font-size: 2.5em;
+  line-height: 1.2;
+}
+.home .intro p strong {
+  font-weight: 700;
+}
+.home .intro .button {
+  font-size: 1.2em;
+  padding: 1em 4em;
+}
+.home .highlights {
+  padding: 3em 0;
+}
+.home .highlights h2 {
+  margin: 0 0 .2em;
+}
+.home .highlights ul {
+  padding: 0;
+  list-style: none;
+}
+.home .highlights ul li {
+  margin-bottom: 2.5em;
+}
+.home .highlights ul li svg {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5em;
+  display: block;
+  fill: #b60000;
+}
+.home .highlights .sub-heading {
+  color: #777;
+  text-transform: uppercase;
+  font-size: 1em;
+  margin-bottom: 3em;
+}
+
+/*********************
+ABOUT PAGE STYLES
+*********************/
+.page-id-4 .about-img {
+  display: none;
+}
+.page-id-4 #inner-content {
+  padding: 2em 0;
+}
+.page-id-4 #content {
+  margin: 0;
+}
+.page-id-4 .page-title {
+  text-align: center;
+  padding: 2em 0;
+  background: #e6e6e6;
+}
+
+/*********************
+BLOG STYLES
+*********************/
+.blog .entry-content {
+  padding: .5em 0 0;
+}
+.blog .entry-content p {
+  margin: 0;
+}
+.blog .post {
+  padding: 2em 0;
+  border-bottom: 1px solid #e6e6e6;
+}
+.blog .post:first-of-type {
+  padding-top: 0;
+}
+.blog .post:last-of-type {
+  border-bottom: none;
 }
 
 /*********************
@@ -1236,7 +1426,22 @@ MEDIA QUERIES
 
   /* end .entry-content */
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 680px) {
+  /*********************
+  HOMEPAGE STYLES
+  *********************/
+  .home .highlights ul {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .home .highlights ul li {
+    flex: 1 1 auto;
+    width: 50%;
+    float: left;
+  }
+}
+@media only screen and (min-width: 840px) {
   /******************************************************************
   Tablet & Small Desktop Stylesheet
   ******************************************************************/
@@ -1244,22 +1449,18 @@ MEDIA QUERIES
   LAYOUT & GRID STYLES
   *********************/
   #inner-content #main {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 66.66667%;
+    width: 65.38462%;
     float: left;
-    padding-left: 1.38889%;
-    padding-right: 1.38889%;
+    margin-right: 3.84615%;
   }
   #inner-content .sidebar {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 33.33333%;
-    float: left;
-    padding-left: 1.38889%;
-    padding-right: 1.38889%;
+    width: 30.76923%;
+    float: right;
+    margin-right: 0;
+  }
+
+  #content {
+    margin: 4em 0;
   }
 
   /*********************
@@ -1268,10 +1469,25 @@ MEDIA QUERIES
   .header #logo {
     float: left;
   }
+  .header nav {
+    clear: none;
+    margin-top: .5em;
+  }
   .header .nav {
     float: right;
     visibility: visible;
     height: auto;
+  }
+  .header .nav a,
+  .header .nav .button a {
+    padding: 0.75em 1em;
+    display: inline-block;
+  }
+  .header .nav .button {
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 1;
   }
 
   /*********************
@@ -1298,7 +1514,7 @@ MEDIA QUERIES
   }
   .nav li ul.sub-menu,
   .nav li ul.children {
-    background: green;
+    background: #b60000;
     margin-top: 0;
     position: absolute;
     visibility: hidden;
@@ -1331,12 +1547,11 @@ MEDIA QUERIES
   SIDEBARS & ASIDES
   *********************/
   .widgettitle {
-    border-bottom: 2px solid #444;
     margin-bottom: 0.75em;
+    margin-top: 0;
   }
 
   .widget {
-    padding: 0 10px;
     margin: 2.2em 0;
   }
   .widget:first-of-type {
@@ -1348,6 +1563,105 @@ MEDIA QUERIES
   .widget ul li ul {
     margin-top: 0.75em;
     padding-left: 1em;
+  }
+
+  /*********************
+  FOOTER STYLES
+  *********************/
+  .footer nav {
+    float: left;
+  }
+  .footer nav .button {
+    padding: 0;
+    line-height: inherit;
+  }
+  .footer .copyright {
+    float: right;
+  }
+  .footer .nav li {
+    font-size: 1em;
+  }
+
+  .bottom-cta {
+    padding: 4em 0;
+  }
+
+  /*********************
+  HOMEPAGE STYLES
+  *********************/
+  .home .intro {
+    overflow: hidden;
+    text-align: left;
+  }
+  .home .intro .wrap {
+    position: relative;
+    padding: 5em 0;
+  }
+  .home .intro img {
+    position: absolute;
+    bottom: 0;
+    left: -80px;
+    width: 54%;
+    display: block;
+  }
+  .home .intro p {
+    font-size: 3em;
+  }
+  .home .intro .intro-text {
+    width: 56.73077%;
+    float: right;
+    margin-right: 0;
+  }
+  .home .highlights {
+    padding: 5em 0;
+  }
+  .home .highlights ul li {
+    flex: 1;
+    padding: 0 .5em;
+  }
+
+  /*********************
+  ABOUT PAGE STYLES
+  *********************/
+  .page-id-4 #inner-content {
+    position: relative;
+  }
+  .page-id-4 #inner-content #main {
+    width: 65.38462%;
+    float: left;
+    margin-right: 3.84615%;
+    margin-left: 17.30769%;
+  }
+}
+@media only screen and (min-width: 970px) {
+  .home .intro img {
+    bottom: -140px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  /*********************
+  HOMEPAGE STYLES
+  *********************/
+  .home .intro img {
+    width: 50%;
+  }
+  .home .intro p {
+    font-size: 3.5em;
+  }
+  .home .intro .intro-text {
+    width: 56.73077%;
+    float: right;
+    margin-right: 0;
+  }
+}
+@media only screen and (min-width: 1380px) {
+  .home .intro img {
+    bottom: -250px;
+  }
+}
+@media only screen and (min-width: 1500px) {
+  .home .intro img {
+    bottom: -310px;
   }
 }
 @media print {

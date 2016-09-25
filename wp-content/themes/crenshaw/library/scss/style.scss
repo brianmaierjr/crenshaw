@@ -30,6 +30,11 @@ BASE (MOBILE) SIZE
 /*********************
 MEDIA QUERIES
 *********************/
-@media only screen and (min-width: 481px) { @import "breakpoints/481up"; } 
-@media only screen and (min-width: 768px) { @import "breakpoints/768up"; } 
+@media only screen and (min-width: 481px) { @import "breakpoints/481up"; }
+@media only screen and (min-width: 680px) { @import "breakpoints/680up"; }
+@media only screen and (min-width: 840px) { @import "breakpoints/840up"; }
+@media only screen and (min-width: 970px) { .home .intro img { bottom: -140px; } }
+@media only screen and (min-width: 1200px) { @import "breakpoints/1200up"; }
+@media only screen and (min-width: 1380px) { .home .intro img { bottom: -250px; } }
+@media only screen and (min-width: 1500px) { .home .intro img { bottom: -310px; } }
 @media print { @import "partials/print"; }

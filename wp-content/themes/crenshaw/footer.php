@@ -1,5 +1,12 @@
 			<footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 
+				<div class="bottom-cta">
+					<div class="wrap cta">
+						<h2>This is the big bottom CTA just above the footer</h2>
+						<a class="button" href="/">Bottom CTA Button Text</a>
+					</div>
+				</div>
+
 				<div id="inner-footer" class="wrap cf">
 
 					<nav role="navigation">
@@ -29,11 +36,11 @@
 		<?php // all js scripts are loaded in library/bones.php ?>
 		<?php wp_footer(); ?>
 
-        <script type='text/javascript' id="__bs_script__">
-            //<![CDATA[
-            document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.2.10.1.js'><\/script>".replace("HOST", location.hostname));
-            //]]>
-        </script>
+		<script type='text/javascript' id="__bs_script__">
+				//<![CDATA[
+				document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.2.10.1.js'><\/script>".replace("HOST", location.hostname));
+				//]]>
+		</script>
 
 	</body>
 

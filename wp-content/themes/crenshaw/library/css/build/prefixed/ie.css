@@ -12,10 +12,13 @@ H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   text-rendering: optimizelegibility;
-  font-weight: 500;
+  font-weight: 400;
 }
 h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
   text-decoration: none;
+}
+h1.sub-heading, .h1.sub-heading, h2.sub-heading, .h2.sub-heading, h3.sub-heading, .h3.sub-heading, h4.sub-heading, .h4.sub-heading, h5.sub-heading, .h5.sub-heading {
+  margin-top: 0;
 }
 
 h1, .h1 {
@@ -71,7 +74,7 @@ h3, .h3 {
 }
 
 h4, .h4 {
-  color: green;
+  color: #b60000;
   font-size: 1.125em;
   line-height: 1.11111111;
 }
@@ -86,18 +89,18 @@ h5, .h5 {
   line-height: 1.25;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: green;
+  color: #b60000;
 }
 
 h6, .h6 {
-  color: green;
+  color: #b60000;
 }
 
 blockquote {
   font-size: 1em;
   line-height: 1.25;
   /* 25px / 20px */
-  border-left: 4px solid gray;
+  border-left: 4px solid #b60000;
   padding-left: 1em;
 }
 @media screen and (min-width: 768px) {
@@ -137,7 +140,7 @@ figure, figcaption {
 SUSY GRID // For any questions go to http://susydocs.oddbird.net/en/latest/
 ******************************************************************/
 .wrap {
-  max-width: 1440px;
+  max-width: 1240px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -148,27 +151,21 @@ SUSY GRID // For any questions go to http://susydocs.oddbird.net/en/latest/
 }
 
 .half {
-  box-sizing: border-box;
-  width: 50%;
+  width: 48.07692%;
   float: left;
-  padding-left: 1.38889%;
-  padding-right: 1.38889%;
+  margin-right: 3.84615%;
 }
 
 .quarter {
-  box-sizing: border-box;
-  width: 25%;
+  width: 22.11538%;
   float: left;
-  padding-left: 1.38889%;
-  padding-right: 1.38889%;
+  margin-right: 3.84615%;
 }
 
 .third {
-  box-sizing: border-box;
-  width: 33.33333%;
+  width: 30.76923%;
   float: left;
-  padding-left: 1.38889%;
-  padding-right: 1.38889%;
+  margin-right: 3.84615%;
 }
 
 /******************************************************************
@@ -206,18 +203,18 @@ Tablet & Small Desktop Stylesheet
 LAYOUT & GRID STYLES
 *********************/
 #inner-content #main {
-  box-sizing: border-box;
-  width: 66.66667%;
+  width: 65.38462%;
   float: left;
-  padding-left: 1.38889%;
-  padding-right: 1.38889%;
+  margin-right: 3.84615%;
 }
 #inner-content .sidebar {
-  box-sizing: border-box;
-  width: 33.33333%;
-  float: left;
-  padding-left: 1.38889%;
-  padding-right: 1.38889%;
+  width: 30.76923%;
+  float: right;
+  margin-right: 0;
+}
+
+#content {
+  margin: 4em 0;
 }
 
 /*********************
@@ -226,10 +223,25 @@ HEADER STYLES
 .header #logo {
   float: left;
 }
+.header nav {
+  clear: none;
+  margin-top: .5em;
+}
 .header .nav {
   float: right;
   visibility: visible;
   height: auto;
+}
+.header .nav a,
+.header .nav .button a {
+  padding: 0.75em 1em;
+  display: inline-block;
+}
+.header .nav .button {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1;
 }
 
 /*********************
@@ -256,7 +268,7 @@ NAVIGATION STYLES
 }
 .nav li ul.sub-menu,
 .nav li ul.children {
-  background: green;
+  background: #b60000;
   margin-top: 0;
   position: absolute;
   visibility: hidden;
@@ -289,12 +301,11 @@ NAVIGATION STYLES
 SIDEBARS & ASIDES
 *********************/
 .widgettitle {
-  border-bottom: 2px solid #444;
   margin-bottom: 0.75em;
+  margin-top: 0;
 }
 
 .widget {
-  padding: 0 10px;
   margin: 2.2em 0;
 }
 .widget:first-of-type {
@@ -306,6 +317,75 @@ SIDEBARS & ASIDES
 .widget ul li ul {
   margin-top: 0.75em;
   padding-left: 1em;
+}
+
+/*********************
+FOOTER STYLES
+*********************/
+.footer nav {
+  float: left;
+}
+.footer nav .button {
+  padding: 0;
+  line-height: inherit;
+}
+.footer .copyright {
+  float: right;
+}
+.footer .nav li {
+  font-size: 1em;
+}
+
+.bottom-cta {
+  padding: 4em 0;
+}
+
+/*********************
+HOMEPAGE STYLES
+*********************/
+.home .intro {
+  overflow: hidden;
+  text-align: left;
+}
+.home .intro .wrap {
+  position: relative;
+  padding: 5em 0;
+}
+.home .intro img {
+  position: absolute;
+  bottom: 0;
+  left: -80px;
+  width: 54%;
+  display: block;
+}
+.home .intro p {
+  font-size: 3em;
+}
+.home .intro .intro-text {
+  width: 56.73077%;
+  float: right;
+  margin-right: 0;
+}
+.home .highlights {
+  padding: 5em 0;
+}
+.home .highlights ul li {
+  -ms-flex: 1;
+      flex: 1;
+  padding: 0 .5em;
+}
+
+/*********************
+ABOUT PAGE STYLES
+*********************/
+.page-id-4 #inner-content {
+  position: relative;
+}
+.page-id-4 #inner-content #main {
+  width: 65.38462%;
+  float: left;
+  margin-right: 3.84615%;
+  margin-left: 17.30769%;
 }
 
 /******************************************************************

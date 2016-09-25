@@ -14,10 +14,4 @@ jQuery(document).ready(function($) {
       });
     });
 
-    // Mobile Nav Trigger
-    $('.menu-trigger').on('click', function() {
-        $('.header nav').toggleClass('visible');
-    });
-
-
 }); /* end of as page load scripts */

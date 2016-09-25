@@ -18,11 +18,12 @@ H1, H2, H3, H4, H5 STYLES
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	text-rendering: optimizelegibility;
-	font-weight: 500;
+	font-weight: 400;
 
 	a {
 		text-decoration: none;
 	}
+	&.sub-heading { margin-top: 0; }
 }
 
 h1, .h1 {
@@ -98,7 +99,7 @@ blockquote {
   font-size: em(16);
   line-height: 1.25;
   /* 25px / 20px */
-  border-left: 4px solid gray;
+  border-left: 4px solid $link-color;
   padding-left: 1em;
 
     @include mobilefirst($bp-med) {
