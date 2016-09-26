@@ -271,7 +271,10 @@ CONTACT PAGE STYLES
 .page-id-4,
 .page-id-16 {
 
-	#content { margin-top: em(61); }
+	#content {
+		margin-top: em(61);
+		padding: 0;
+	}
 }
 
 

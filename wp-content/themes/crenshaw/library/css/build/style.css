@@ -1374,6 +1374,10 @@ FOOTER STYLES
 .footer .nav .button a {
   padding: .25em 1em;
 }
+.footer .nav a:hover {
+  color: white;
+  text-decoration: underline;
+}
 
 /*********************
 BOTTOM CTA STYLES
@@ -1843,6 +1847,7 @@ MEDIA QUERIES
   .page-id-4 #content,
   .page-id-16 #content {
     margin-top: 3.8125em;
+    padding: 0;
   }
 
   /*********************
@@ -1866,9 +1871,9 @@ MEDIA QUERIES
     transform: translateY(-50%);
   }
 }
-@media only screen and (min-width: 970px) {
+@media only screen and (min-width: 1083px) {
   .home .intro img {
-    bottom: -140px;
+    bottom: -60px;
   }
 }
 @media only screen and (min-width: 1200px) {
@@ -1890,14 +1895,9 @@ MEDIA QUERIES
     margin-right: 0;
   }
 }
-@media only screen and (min-width: 1380px) {
+@media only screen and (min-width: 1440px) {
   .home .intro img {
-    bottom: -250px;
-  }
-}
-@media only screen and (min-width: 1500px) {
-  .home .intro img {
-    bottom: -310px;
+    bottom: -190px;
   }
 }
 @media print {

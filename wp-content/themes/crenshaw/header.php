@@ -31,20 +31,6 @@
 
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
-
-		<script type="text/javascript">
-		var cookie = document.cookie;
-		if (cookie.indexOf('visited=', 0) == -1) {
-				var expiration = new Date();
-				expiration.setDate(expiration.getDate()+1);
-				document.cookie = 'visited=1;expires=' + expiration + ';path=/';
-
-				var element = document.getElementById('popInTop');
-				element.style.display = 'block';
-		}
-		</script>
-
-
 		<?php if ( is_single() ) { ?>
 			<div class="intro">
 				<div class="wrap cf">

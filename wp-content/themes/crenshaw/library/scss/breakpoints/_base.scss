@@ -451,6 +451,11 @@ FOOTER STYLES
 
 			a { padding: .25em 1em; }
 		}
+
+		a:hover {
+			color: white;
+			text-decoration: underline;
+		}
 	}
 }
 
