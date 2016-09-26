@@ -53,42 +53,41 @@
 		<?php if ( is_single() ) { ?>
 			<script>
 				(function($) {
+					var popIn_visible = false;
 
 					if ( ! Cookies.get('popIn') ) {
 
 						setTimeout(function(){
 							jQuery('.single .intro').css('max-height', '100vh');
 							jQuery('html,body').animate({ scrollTop: 0 }, 'slow');
-							popIn_visible = true;
 
 							jQuery( '#form .formTrigger' ).click(function() {
-									popIn_visible = false;
+									popIn_visible = true;
 									jQuery('.intro').remove();
 							});
 
 							Cookies.set('popIn', '1', { expires: 90, path: '' });
 
 						}, 2000);
+
+						function popIn_scroll() {
+
+							var window_height	= jQuery( window ).height();
+							var actual_scroll = jQuery( document ).scrollTop();
+							var popIn = jQuery('.intro');
+							var content = jQuery('#content');
+							var popIn_visible = true;
+
+							if ( popIn_visible  && actual_scroll >= window_height ) {
+								jQuery( document ).scrollTop( actual_scroll - window_height );
+								popIn_visible = false;
+								popIn.remove();
+							}
+						};
+
+						jQuery( window ).scroll( popIn_scroll );
+
 					};
-
-
-					function popIn_scroll() {
-
-						var window_height	= jQuery( window ).height();
-						var actual_scroll = jQuery( document ).scrollTop();
-						var popIn = jQuery('.intro');
-						var content = jQuery('#content');
-						var popIn_visible = true;
-
-						if ( popIn_visible && actual_scroll >= window_height ) {
-
-							jQuery( document ).scrollTop( actual_scroll - window_height );
-							popIn_visible = false;
-							popIn.remove();
-						}
-					}
-
-					jQuery( window ).scroll( popIn_scroll );
 
 				})(jQuery);
 			</script>
