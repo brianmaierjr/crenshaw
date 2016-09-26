@@ -66,7 +66,7 @@
 									jQuery('.intro').remove();
 							});
 
-							Cookies.set('popIn', '1', { expires: 7, path: '' });
+							Cookies.set('popIn', '1', { expires: 90, path: '' });
 
 						}, 2000);
 					};
