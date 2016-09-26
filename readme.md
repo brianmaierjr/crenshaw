@@ -2,8 +2,6 @@
 
 This repo features the entire WordPress install including core files.
 
-The core of this theme is based on [Bones theme](https://github.com/eddiemachado/bones).
-
 ## Basic Usage
 
 ### Install Dependencies
