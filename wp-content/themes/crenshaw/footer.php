@@ -60,7 +60,6 @@
 						setTimeout(function(){
 							jQuery('.single .intro').css('max-height', '100vh');
 							jQuery('html,body').animate({ scrollTop: 0 }, 'slow');
-							popIn_visible = true;
 
 							jQuery( '#form .formTrigger' ).click(function() {
 									popIn_visible = true;
@@ -77,6 +76,10 @@
 							var actual_scroll = jQuery( document ).scrollTop();
 							var popIn = jQuery('.intro');
 							var content = jQuery('#content');
+<<<<<<< HEAD
+=======
+							var popIn_visible = true;
+>>>>>>> d8ed6600ba1c616b5a665ef1549135df58631d9d
 
 							if ( popIn_visible  && actual_scroll >= window_height ) {
 								jQuery( document ).scrollTop( actual_scroll - window_height );
@@ -87,8 +90,11 @@
 
 						jQuery( window ).scroll( popIn_scroll );
 
+<<<<<<< HEAD
 					} else if ( Cookies.get('popIn') ) {
 						jQuery('.intro').remove();
+=======
+>>>>>>> d8ed6600ba1c616b5a665ef1549135df58631d9d
 					};
 
 				})(jQuery);
