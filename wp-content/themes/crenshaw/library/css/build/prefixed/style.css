@@ -865,6 +865,7 @@ span.wpcf7-not-valid-tip {
   opacity: 0;
   transition: .2s all ease-in-out;
   overflow-y: scroll;
+  z-index: 999;
 }
 #form h2 {
   text-align: center;
@@ -1061,7 +1062,7 @@ a:link, a:visited:link {
 HEADER STYLES
 *********************/
 #logo {
-  margin: 0.75em 0;
+  margin: 0.75em 0 .2em;
   font-size: 1.5em;
   text-transform: uppercase;
 }
@@ -1600,7 +1601,7 @@ MEDIA QUERIES
   FORM STYLES
   *********************/
   #form .form-container {
-    margin: 2em auto 0;
+    margin: 2em auto;
   }
 }
 @media only screen and (min-width: 680px) {

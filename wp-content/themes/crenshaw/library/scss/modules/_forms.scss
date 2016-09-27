@@ -145,6 +145,7 @@ span.wpcf7-not-valid-tip {
 	opacity: 0;
 	transition: .2s all ease-in-out;
 	overflow-y: scroll;
+	z-index: 999;
 
 	h2 {
 		text-align: center;
