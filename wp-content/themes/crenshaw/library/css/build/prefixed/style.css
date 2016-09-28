@@ -1096,10 +1096,11 @@ HEADER STYLES
   border: 2px solid #b60000;
   margin-bottom: 1em;
   display: inline-block;
-  margin-top: 1em;
+  margin-top: .5em;
+  padding: 0;
 }
 .header nav .button a {
-  padding: 0.25em 0.5em;
+  padding: .25em .5em;
 }
 .header nav .button:hover {
   background: #b60000;
@@ -1241,6 +1242,7 @@ SINGLE POST STYLES
   height: 100vh;
   max-height: 0;
   transition: .5s max-height ease-in-out;
+  overflow: hidden;
 }
 .single .intro .wrap {
   position: relative;
@@ -1453,7 +1455,7 @@ HOMEPAGE STYLES
 }
 .intro p {
   font-weight: 300;
-  font-size: 2.5em;
+  font-size: 2em;
   line-height: 1.2;
 }
 .intro p strong {

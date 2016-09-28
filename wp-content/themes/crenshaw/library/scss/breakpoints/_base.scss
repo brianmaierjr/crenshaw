@@ -116,9 +116,10 @@ HEADER STYLES
 			border: 2px solid $link-color;
 			margin-bottom: 1em;
 			display: inline-block;
-			margin-top: 1em;
+			margin-top: .5em;
+			padding: 0;
 
-			a { padding: .25em .5em ; }
+			a { padding: .25em .5em; }
 
 			&:hover {
 				background: $link-color;
@@ -291,6 +292,7 @@ SINGLE POST STYLES
 		height: 100vh;
 		max-height: 0;
 		transition: .5s max-height ease-in-out;
+		overflow: hidden;
 
 		.wrap {
 			position: relative;
@@ -532,7 +534,7 @@ HOMEPAGE STYLES
 		h2 { font-size: 1em; }
 		p {
 			font-weight: 300;
-			font-size: 2.5em;
+			font-size: 2em;
 			line-height: 1.2;
 
 			strong { font-weight: 700; }
